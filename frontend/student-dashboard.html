@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/student.css">
 </head>
 <body>
-    <h1>Welcome, Student!</h1>
-    <button id="markAttendance">Mark Attendance</button>
-    <p id="locationStatus"></p>
-    <script src="js/student.js"></script>
+    <div class="dashboard">
+        <h2>Student Dashboard</h2>
+        <div id="studentInfo"></div>
+
+        <h3>View Attendance</h3>
+        <input type="date" id="filterDate">
+        <button onclick="fetchAttendance()">Filter</button>
+
+        <table id="attendanceTable">
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

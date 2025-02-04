@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="css/faculty.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Faculty Dashboard</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('addStudent')">Add Student</a></li>
+            <li><a href="#" onclick="showSection('viewAttendance')">View Attendance</a></li>
+            <li><a href="#" onclick="showSection('generateReports')">Generate Reports</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2 id="facultyDetails"></h2>
+
+        <!-- Add Student Section -->
+        <section id="addStudent">
+            <h2>Add Student</h2>
+            <form id="studentForm">
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="text" id="studentID" placeholder="Student ID" required>
+                <button type="submit">Add Student</button>
+            </form>
+            <table id="studentTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Semester</th>
+                </tr>
+            </table>
+        </section>
+
+        <!-- View Attendance Section -->
+        <section id="viewAttendance" style="display: none;">
+            <h2>View Attendance</h2>
+            <input type="date" id="filterDate">
+            <input type="text" id="filterStudent" placeholder="Search by Student Name">
+            <button onclick="fetchAttendance()">Filter</button>
+            <table id="attendanceTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Generate Reports Section -->
+        <section id="generateReports" style="display: none;">
+            <h2>Generate Reports</h2>
+            <button onclick="generateReport('daily')">Daily Report</button>
+            <button onclick="generateReport('weekly')">Weekly Report</button>
+            <button onclick="generateReport('monthly')">Monthly Report</button>
+            <div id="reportResult"></div>
+        </section>
+    </div>
+
+    <script src="js/faculty.js"></script>
+</body>
+</html>
